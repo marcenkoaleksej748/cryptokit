@@ -1,0 +1,12 @@
+struct CustomButtonStyle: ButtonStyle {
+    
+    let pressedScale: CGFloat
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 50, height: 50)
+            .shadow(radius: 10)
+            .background(configuration.isPressed ? .green : .blue)
+            .scaleEffect(configuration.isPressed ? pressedScale : 1)
+    }
+}
